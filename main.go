@@ -93,7 +93,7 @@ func main() {
 
 	for _, pr := range prs {
 		comments, _ := getComments(client, ctx, *pr.Number)
-		//fmt.Printf("#%v  %v, Comments: %v %v\n", *pr.Number, *pr.Title, len(comments), *pr.State)
+		
 		timeUntilClose, timeUntilMerge, timeUntilFirstComment := getStatisticsForPullRequest(pr, comments)
 
 		if timeUntilClose > 0.0 {
